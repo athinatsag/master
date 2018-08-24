@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<script src="script/d3.v3.min.js" type="text/javascript"></script>
+<script src="script/leaflet.js" type="text/javascript"></script>
+<script src="script/mapbox.js" type="text/javascript"></script>
+<script src="script/jquery-3.3.1.min.js" type="text/javascript"></script>
+<link href='css/mapbox.css' rel='stylesheet' />
+<link rel="stylesheet" type="text/css" href="css/stylepage.css" />
+
+<body>
+
+    <script src="script/d3.v4.min.js"></script>
+
+
+
+    <h1 style="font-size:15px;">Choose one category of number of occurrences:</h1>
+
+    <select id="category_dropdown">
+        <option value="1" selected>200+</option>
+        <option value="2">150-200</option>
+        <option value="3">120-150</option>
+        <option value="4">100-120</option>
+        <option value="5">80-100</option>
+        <option value="6">60-80</option>
+        <option value="7">40-60</option>
+        <option value="8">30-40</option>
+        <option value="9">20-30 (a)</option>
+         <option value="10">20-30 (b)</option>
+    </select>
+    <br>
+
+    <h1 style="font-size:15px;"> Choose one or more groups:</h1>
+
+    <div class="group-box-list visible" id="category1">
+        <label for="checkbox_1">
+            <input type="checkbox" id="checkbox_1" data-markerclasses="dot-blue" data-colors="#0082c8" data-number="11.0">
+
+            Group #11
+        </label>
+        <label for="checkbox_2">
+            <input type="checkbox" id="checkbox_2" data-markerclasses="dot-red" data-colors="#e6194b" data-number="24.0">
+            Group #24
+        </label>
+        <label for="checkbox_3">
+            <input type="checkbox" id="checkbox_3" data-markerclasses="dot-purple" data-colors="#911eb4" data-number="5.0">
+            Group #5
+        </label>
+        <label for="checkbox_4">
+            <input type="checkbox" id="checkbox_4" data-markerclasses="dot-orange" data-colors="#f58231" data-number="17.0">
+            Group #17
+        </label>
+        <label for="checkbox_5">
+            <input type="checkbox" id="checkbox_5" data-markerclasses="dot-yellow" data-colors="#ffe119" data-number="31.0">
+            Group #31
+        </label>
+        <label for="checkbox_6">
+            <input type="checkbox" id="checkbox_6" data-markerclasses="dot-green" data-colors="#3cb44b" data-number="21.0">
+            Group #21
+        </label>
+        <div class="button-wrapper">
+            <button class="select-all-button">Select All Groups</button>
+        </div>
+    </div>
+
+    <div class="group-box-list" id="category2">
+        <label for="checkbox_7">
+            <input type="checkbox" id="checkbox_7" data-markerclasses="dot-blue" data-colors="#0082c8" data-number="23.0">
+            Group #23
+        </label>
+        <label for="checkbox_8">
+            <input type="checkbox" id="checkbox_8" data-markerclasses="dot-red" data-colors="#e6194b" data-number="10.0">
+            Group #10
+        </label>
+        <label for="checkbox_9">
+            <input type="checkbox" id="checkbox_9" data-markerclasses="dot-purple" data-colors="#911eb4" data-number="41.0">
+            Group #41
+        </label>
+        <label for="checkbox_10">
+            <input type="checkbox" id="checkbox_10" data-markerclasses="dot-orange" data-colors="#f58231" data-number="12.0">
+            Group #12
+        </label>
+        <div class="button-wrapper">
+            <button class="select-all-button">Select All Groups</button>
+        </div>
+    </div>
+
+    <div class="group-box-list" id="category3">
+        <label for="checkbox_11">
+            <input type="checkbox" id="checkbox_11" data-markerclasses="dot-yellow" data-colors="#ffe119" data-number="37.0">
+            Group #37
+        </label>
+        <label for="checkbox_12">
+            <input type="checkbox" id="checkbox_12" data-markerclasses="dot-red" data-colors="#e6194b" data-number="47.0">
+            Group #47
+        </label>
+        <label for="checkbox_13">
+            <input type="checkbox" id="checkbox_13" data-markerclasses="dot-purple" data-colors="#911eb4" data-number="6.0">
+            Group #6
+        </label>
+        <label for="checkbox_14">
+            <input type="checkbox" id="checkbox_14" data-markerclasses="dot-orange" data-colors="#f58231" data-number="16.0">
+            Group #16
+        </label>
+        <label for="checkbox_15">
+            <input type="checkbox" id="checkbox_15" data-markerclasses="dot-yellow" data-colors="#ffe119" data-number="14.0">
+            Group #14
+        </label>
+        <label for="checkbox_16">
+            <input type="checkbox" id="checkbox_16" data-markerclasses="dot-magenda" data-colors="#f032e6" data-number="1.0">
+            Group #1
+        </label>
+        <label for="checkbox_17">
+            <input type="checkbox" id="checkbox_17" data-markerclasses="dot-navy" data-colors="#000080" data-number="7.0">
+            Group #7
+        </label>
+        <label for="checkbox_18">
+            <input type="checkbox" id="checkbox_18" data-markerclasses="dot-teal" data-colors="#008080" data-number="2.0">
+            Group #2
+        </label>
+        <div class="button-wrapper">
+            <button class="select-all-button">Select All Groups</button>
+        </div>
+    </div>
+
+    <div class="group-box-list" id="category4">
+        <label for="checkbox_19">
+            <input type="checkbox" id="checkbox_19" data-markerclasses="dot-blue" data-colors="#0082c8" data-number="40.0">
+            Group #40
+        </label>
+        <label for="checkbox_20">
+            <input type="checkbox" id="checkbox_20" data-markerclasses="dot-red" data-colors="#e6194b" data-number="8.0">
+            Group #8
+        </label>
+        <label for="checkbox_21">
+            <input type="checkbox" id="checkbox_21" data-markerclasses="dot-purple" data-colors="#911eb4" data-number="13.0">
+            Group #13
+        </label>
+        <label for="checkbox_22">
+            <input type="checkbox" id="checkbox_22" data-markerclasses="dot-orange" data-colors="#f58231" data-number="82.0">
+            Group #82
+        </label>
+        <label for="checkbox_23">
+            <input type="checkbox" id="checkbox_23" data-markerclasses="dot-yellow" data-colors="#ffe119" data-number="4.0">
+            Group #4
+        </label>
+        <div class="button-wrapper">
+            <button class="select-all-button">Select All Groups</button>
+        </div>
+    </div>
+
+    <div class="group-box-list" id="category5">
+        <label for="checkbox_24">
+            <input type="checkbox" id="checkbox_24" data-markerclasses="dot-blue" data-colors="#0082c8" data-number="45.0">
+            Group #45
+        </label>
+        <label for="checkbox_25">
+            <input type="checkbox" id="checkbox_25" data-markerclasses="dot-red" data-colors="#e6194b" data-number="43.0">
+            Group #43
+        </label>
+        <label for="checkbox_26">
+            <input type="checkbox" id="checkbox_26" data-markerclasses="dot-purple" data-colors="#911eb4" data-number="0.0">
+            Group #0
+        </label>
+        <label for="checkbox_27">
+            <input type="checkbox" id="checkbox_27" data-markerclasses="dot-orange" data-colors="#f58231" data-number="22.0">
+            Group #22
+        </label>
+        <label for="checkbox_28">
+            <input type="checkbox" id="checkbox_28" data-markerclasses="dot-yellow" data-colors="#ffe119" data-number="28.0">
+            Group #28
+        </label>
+        <label for="checkbox_29">
+            <input type="checkbox" id="checkbox_29" data-markerclasses="dot-green" data-colors="#3cb44b" data-number="36.0">
+            Group #36
+        </label>
+        <label for="checkbox_30">
+            <input type="checkbox" id="checkbox_30" data-markerclasses="dot-magenda" data-colors="#f032e6" data-number="50.0">
+            Group #50
+        </label>
+        <label for="checkbox_31">
+            <input type="checkbox" id="checkbox_31" data-markerclasses="dot-navy" data-colors="#000080" data-number="3.0">
+            Group #3
+        </label>
+        <label for="checkbox_32">
+            <input type="checkbox" id="checkbox_32" data-markerclasses="dot-teal" data-colors="#008080" data-number="33.0">
+            Group #33
+        </label>
+        <div class="button-wrapper">
+            <button class="select-all-button">Select All Groups</button>
+        </div>
+    </div>
+
+    <div class="group-box-list" id="category6">
+        <label for="checkbox_33">
+            <input type="checkbox" id="checkbox_33" data-markerclasses="dot-blue" data-colors="#0082c8" data-number="92.0">
+            Group #92
+        </label>
+        <label for="checkbox_34">
+            <input type="checkbox" id="checkbox_34" data-markerclasses="dot-red" data-colors="#e6194b" data-number="55.0">
+            Group #55
+        </label>
+        <label for="checkbox_35">
+            <input type="checkbox" id="checkbox_35" data-markerclasses="dot-purple" data-colors="#911eb4" data-number="59.0">
+            Group #59
+        </label>
+        <label for="checkbox_36">
+            <input type="checkbox" id="checkbox_36" data-markerclasses="dot-orange" data-colors="#f58231" data-number="63.0">
+            Group #63
+        </label>
+        <label for="checkbox_37">
+            <input type="checkbox" id="checkbox_37" data-markerclasses="dot-yellow" data-colors="#ffe119" data-number="132.0">
+            Group #132
+        </label>
+        <label for="checkbox_38">
+            <input type="checkbox" id="checkbox_38" data-markerclasses="dot-green" data-colors="#3cb44b" data-number="65.0">
+            Group #65
+        </label>
+        <label for="checkbox_39">
+            <input type="checkbox" id="checkbox_39" data-markerclasses="dot-magenda" data-colors="#f032e6" data-number="79.0">
+            Group #79
+        </label>
+        <label for="checkbox_40">
+            <input type="checkbox" id="checkbox_40" data-markerclasses="dot-navy" data-colors="#000080" data-number="20.0">
+            Group #20
+        </label>
+        <label for="checkbox_41">
+            <input type="checkbox" id="checkbox_41" data-markerclasses="dot-teal" data-colors="#008080" data-number="18.0">
+            Group #18
+        </label>
+        <label for="checkbox_42">
+            <input type="checkbox" id="checkbox_42" data-markerclasses="dot-cyan" data-colors="#46f0f0" data-number="38.0">
+            Group #38
+        </label>
+        <label for="checkbox_43">
+            <input type="checkbox" id="checkbox_43" data-markerclasses="dot-lime" data-colors="#d2f53c" data-number="44.0">
+            Group #44
+        </label>
+        <label for="checkbox_44">
+            <input type="checkbox" id="checkbox_44" data-markerclasses="dot-brown" data-colors="#aa6e28" data-number="42.0">
+            Group #42
+        </label>
+        <label for="checkbox_45">
+            <input type="checkbox" id="checkbox_45" data-markerclasses="dot-maroon" data-colors="#800000" data-number="58.0">
+            Group #58
+        </label>
+        <label for="checkbox_46">
+            <input type="checkbox" id="checkbox_46" data-markerclasses="dot-olive" data-colors="#808000" data-number="15.0">
+            Group #15
+        </label>
+        <label for="checkbox_47">
+            <input type="checkbox" id="checkbox_47" data-markerclasses="dot-mint" data-colors="#aaffc3" data-number="49.0">
+            Group #49
+        </label>
+        <div class="button-wrapper">
+            <button class="select-all-button">Select All Groups</button>
+        </div>
+    </div>
+
+    <div class="group-box-list" id="category7">
+        <label for="checkbox_48">
+            <input type="checkbox" id="checkbox_48" data-markerclasses="dot-blue" data-colors="#0082c8" data-number="61.0">
+            Group #61
+        </label>
+        <label for="checkbox_49">
+            <input type="checkbox" id="checkbox_49" data-markerclasses="dot-red" data-colors="#e6194b" data-number="53.0">
+            Group #53
+        </label>
+        <label for="checkbox_50">
+            <input type="checkbox" id="checkbox_50" data-markerclasses="dot-purple" data-colors="#911eb4" data-number="80.0">
+            Group #80
+        </label>
+        <label for="checkbox_51">
+            <input type="checkbox" id="checkbox_51" data-markerclasses="dot-orange" data-colors="#f58231" data-number="122.0">
+            Group #122
+        </label>
+        <label for="checkbox_52">
+            <input type="checkbox" id="checkbox_52" data-markerclasses="dot-yellow" data-colors="#ffe119" data-number="136.0">
+            Group #136
+        </label>
+        <label for="checkbox_53">
+            <input type="checkbox" id="checkbox_53" data-markerclasses="dot-green" data-colors="#3cb44b" data-number="83.0">
+            Group #83
+        </label>
+        <label for="checkbox_54">
+            <input type="checkbox" id="checkbox_54" data-markerclasses="dot-magenda" data-colors="#f032e6" data-number="85.0">
+            Group #85
+        </label>
+        <label for="checkbox_55">
+            <input type="checkbox" id="checkbox_55" data-markerclasses="dot-navy" data-colors="#000080" data-number="102.0">
+            Group #102
+        </label>
+        <label for="checkbox_56">
+            <input type="checkbox" id="checkbox_56" data-markerclasses="dot-teal" data-colors="#008080" data-number="97.0">
+            Group #97
+        </label>
+        <label for="checkbox_57">
+            <input type="checkbox" id="checkbox_57" data-markerclasses="dot-cyan" data-colors="#46f0f0" data-number="142.0">
+            Group #142
+        </label>
+        <label for="checkbox_58">
+            <input type="checkbox" id="checkbox_58" data-markerclasses="dot-lime" data-colors="#d2f53c" data-number="19.0">
+            Group #19
+        </label>
+        <label for="checkbox_59">
+            <input type="checkbox" id="checkbox_59" data-markerclasses="dot-brown" data-colors="#aa6e28" data-number="25.0">
+            Group #25
+        </label>
+        <div class="button-wrapper">
+            <button class="select-all-button">Select All Groups</button>
+        </div>
+    </div>
+
+    <div class="group-box-list" id="category8">
+        <label for="checkbox_60">
+            <input type="checkbox" id="checkbox_60" data-markerclasses="dot-blue" data-colors="#0082c8" data-number="35.0">
+            Group #35
+        </label>
+        <label for="checkbox_61">
+            <input type="checkbox" id="checkbox_61" data-markerclasses="dot-red" data-colors="#e6194b" data-number="96.0">
+            Group #96
+        </label>
+        <label for="checkbox_62">
+            <input type="checkbox" id="checkbox_62" data-markerclasses="dot-purple" data-colors="#911eb4" data-number="180.0">
+            Group #180
+        </label>
+        <label for="checkbox_63">
+            <input type="checkbox" id="checkbox_63" data-markerclasses="dot-orange" data-colors="#f58231" data-number="67.0">
+            Group #67
+        </label>
+        <label for="checkbox_64">
+            <input type="checkbox" id="checkbox_64" data-markerclasses="dot-yellow" data-colors="#ffe119" data-number="112.0">
+            Group #112
+        </label>
+        <label for="checkbox_65">
+            <input type="checkbox" id="checkbox_65" data-markerclasses="dot-green" data-colors="#3cb44b" data-number="230.0">
+            Group #230
+        </label>
+        <label for="checkbox_66">
+            <input type="checkbox" id="checkbox_66" data-markerclasses="dot-magenda" data-colors="#f032e6" data-number="30.0">
+            Group #30
+        </label>
+        <label for="checkbox_67">
+            <input type="checkbox" id="checkbox_67" data-markerclasses="dot-navy" data-colors="#000080" data-number="176.0">
+            Group #176
+        </label>
+        <label for="checkbox_68">
+            <input type="checkbox" id="checkbox_68" data-markerclasses="dot-teal" data-colors="#008080" data-number="144.0">
+            Group #144
+        </label>
+        <label for="checkbox_69">
+            <input type="checkbox" id="checkbox_69" data-markerclasses="dot-cyan" data-colors="#46f0f0" data-number="34.0">
+            Group #34
+        </label>
+        <label for="checkbox_70">
+            <input type="checkbox" id="checkbox_70" data-markerclasses="dot-lime" data-colors="#d2f53c" data-number="162.0">
+            Group #162
+        </label>
+        <label for="checkbox_71">
+            <input type="checkbox" id="checkbox_71" data-markerclasses="dot-brown" data-colors="#aa6e28" data-number="60.0">
+            Group #60
+        </label>
+        <label for="checkbox_72">
+            <input type="checkbox" id="checkbox_72" data-markerclasses="dot-maroon" data-colors="#800000" data-number="127.0">
+            Group #127
+        </label>
+        <label for="checkbox_73">
+            <input type="checkbox" id="checkbox_73" data-markerclasses="dot-olive" data-colors="#808000" data-number="64.0">
+            Group #64
+        </label>
+        <label for="checkbox_74">
+            <input type="checkbox" id="checkbox_74" data-markerclasses="dot-mint" data-colors="#aaffc3" data-number="76.0">
+            Group #76
+        </label>
+        <label for="checkbox_75">
+            <input type="checkbox" id="checkbox_75" data-markerclasses="dot-pumkin" data-colors="#A93226" data-number="121.0">
+            Group #121
+        </label>
+        <label for="checkbox_77">
+            <input type="checkbox" id="checkbox_77" data-markerclasses="dot-grey" data-colors="#212F3D" data-number="129.0">
+            Group #129
+        </label>
+        <label for="checkbox_78">
+            <input type="checkbox" id="checkbox_78" data-markerclasses="dot-veraman" data-colors="#0B5345" data-number="139.0">
+            Group #139
+        </label>
+        <label for="checkbox_79">
+            <input type="checkbox" id="checkbox_79" data-markerclasses="dot-pinkfluo" data-colors="#FF33FF" data-number="39.0">
+            Group #39
+        </label>
+        <label for="checkbox_80">
+            <input type="checkbox" id="checkbox_80" data-markerclasses="dot-greenfluo" data-colors="#33FF33" data-number="9.0">
+            Group #9
+        </label>
+        <label for="checkbox_81">
+            <input type="checkbox" id="checkbox_81" data-markerclasses="dot-darkpurple" data-colors="#330033" data-number="98.0">
+            Group #98
+        </label>
+        <label for="checkbox_112">
+            <input type="checkbox" id="checkbox_112" data-markerclasses="dot-lila" data-colors="#CC33FF" data-number="145.0">
+            Group #145
+        </label>
+        <div class="button-wrapper">
+            <button class="select-all-button">Select All Groups</button>
+        </div>
+    </div>
+
+    <div class="group-box-list" id="category9">
+        <label for="checkbox_82">
+            <input type="checkbox" id="checkbox_82" data-markerclasses="dot-blue" data-colors="#0082c8" data-number="71.0">
+            Group #71
+        </label>
+        <label for="checkbox_83">
+            <input type="checkbox" id="checkbox_83" data-markerclasses="dot-red" data-colors="#e6194b" data-number="68.0">
+            Group #68
+        </label>
+        <label for="checkbox_84">
+            <input type="checkbox" id="checkbox_84" data-markerclasses="dot-purple" data-colors="#911eb4" data-number="206.0">
+            Group #206
+        </label>
+        <label for="checkbox_85">
+            <input type="checkbox" id="checkbox_85" data-markerclasses="dot-orange" data-colors="#f58231" data-number="51.0">
+            Group #51
+        </label>
+        <label for="checkbox_86">
+            <input type="checkbox" id="checkbox_86" data-markerclasses="dot-yellow" data-colors="#ffe119" data-number="126.0">
+            Group #126
+        </label>
+        <label for="checkbox_87">
+            <input type="checkbox" id="checkbox_87" data-markerclasses="dot-green" data-colors="#3cb44b" data-number="108.0">
+            Group #108
+        </label>
+        <label for="checkbox_88">
+            <input type="checkbox" id="checkbox_88" data-markerclasses="dot-magenda" data-colors="#f032e6" data-number="154.0">
+            Group #154
+        </label>
+        <label for="checkbox_89">
+            <input type="checkbox" id="checkbox_89" data-markerclasses="dot-navy" data-colors="#000080" data-number="183.0">
+            Group #183
+        </label>
+        <label for="checkbox_90">
+            <input type="checkbox" id="checkbox_90" data-markerclasses="dot-teal" data-colors="#008080" data-number="124.0">
+            Group #124
+        </label>
+        <label for="checkbox_91">
+            <input type="checkbox" id="checkbox_91" data-markerclasses="dot-cyan" data-colors="#46f0f0" data-number="152.0">
+            Group #152
+        </label>
+        <label for="checkbox_92">
+            <input type="checkbox" id="checkbox_92" data-markerclasses="dot-lime" data-colors="#d2f53c" data-number="148.0">
+            Group #148
+        </label>
+        <label for="checkbox_93">
+            <input type="checkbox" id="checkbox_93" data-markerclasses="dot-brown" data-colors="#aa6e28" data-number="48.0">
+            Group #48
+        </label>
+        <label for="checkbox_94">
+            <input type="checkbox" id="checkbox_94" data-markerclasses="dot-maroon" data-colors="#800000" data-number="95.0">
+            Group #95
+        </label>
+        <label for="checkbox_95">
+            <input type="checkbox" id="checkbox_95" data-markerclasses="dot-olive" data-colors="#808000" data-number="66.0">
+            Group #66
+        </label>
+        <label for="checkbox_96">
+            <input type="checkbox" id="checkbox_96" data-markerclasses="dot-mint" data-colors="#aaffc3" data-number="196.0">
+            Group #196
+        </label>
+
+        <div class="button-wrapper">
+            <button class="select-all-button">Select All Groups</button>
+        </div>
+    </div>
+     <div class="group-box-list" id="category10">
+     <label for="checkbox_97">
+         <input type="checkbox" id="checkbox_97" data-markerclasses="dot-blue"  data-colors="#0082c8" data-number="196.0">
+         Group #196
+     </label>
+     <label for="checkbox_98">
+         <input type="checkbox" id="checkbox_98" data-markerclasses="dot-red"  data-colors="#e6194b" data-number="194.0">
+         Group #194
+     </label>
+     <label for="checkbox_99">
+         <input type="checkbox" id="checkbox_99" data-markerclasses= "dot-purple"  data-colors="#911eb4" data-number="135.0">
+         Group #135
+     </label>
+     <label for="checkbox_100">
+         <input type="checkbox" id="checkbox_100" data-markerclasses="dot-orange"  data-colors="#f58231" data-number="52.0">
+         Group #52
+     </label>
+     <label for="checkbox_101">
+         <input type="checkbox" id="checkbox_101" data-markerclasses= "dot-yellow" data-colors="#ffe119" data-number="74.0">
+         Group #74
+     </label>
+     <label for="checkbox_102">
+         <input type="checkbox" id="checkbox_102" data-markerclasses="dot-green"  data-colors="#3cb44b" data-number="88.0">
+         Group #88
+     </label>
+     <label for="checkbox_103">
+         <input type="checkbox" id="checkbox_103" data-markerclasses="dot-magenda"  data-colors="#f032e6" data-number="109.0">
+         Group #109
+     </label>
+     <label for="checkbox_104">
+         <input type="checkbox" id="checkbox_104" data-markerclasses="dot-navy"  data-colors="#000080"data-number="117.0">
+         Group #117
+     </label>
+     <label for="checkbox_105">
+         <input type="checkbox" id="checkbox_105" data-markerclasses="dot-teal" data-colors="#008080" data-number="179.0">
+         Group #179
+     </label>
+     <label for="checkbox_106">
+         <input type="checkbox" id="checkbox_106" data-markerclasses="dot-cyan"  data-colors="#46f0f0" data-number="72.0">
+         Group #72
+     </label>
+     <label for="checkbox_107">
+         <input type="checkbox" id="checkbox_107" data-markerclasses="dot-lime"  data-colors="#d2f53c" data-number="101.0">
+         Group #101
+     </label>
+     <label for="checkbox_108">
+         <input type="checkbox" id="checkbox_108" data-markerclasses="dot-brown"  data-colors="#aa6e28" data-number="141.0">
+         Group #141
+     </label>
+     <label for="checkbox_109">
+         <input type="checkbox" id="checkbox_109" data-markerclasses="dot-maroon"  data-colors="#800000" data-number="107.0">
+         Group #107
+     </label>
+     <label for="checkbox_110">
+         <input type="checkbox" id="checkbox_110" data-markerclasses= "dot-olive" data-colors="#808000" data-number="143.0">
+         Group #143
+     </label>
+     <label for="checkbox_111">
+         <input type="checkbox" id="checkbox_111" data-markerclasses="dot-mint" data-colors="#aaffc3" data-number="165.0">
+         Group #165
+     </label>
+     <div class="button-wrapper">
+            <button class="select-all-button">Select All Groups</button>
+        </div>
+    </div>
+
+
+
+     <h1 style="font-size:15px;">Choose speed for the animation:</h1>
+    <select id="speed_dropdown">
+        <option value="1" selected>Normal Speed</option>
+        <option value="2">Slow Speed</option>
+    </select>
+    <h1 style="font-size:15px;">Choose one of the following options:</h1>
+
+    <div id="button"></div>
+
+    <div id="map"></div>
+
+    <script src="js/categories.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+<footer>
+    Created by Athina Tsagkari (s163016)
+</footer>
+
+
+</html>

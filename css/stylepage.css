@@ -1,0 +1,161 @@
+html, #map {
+    width: 1000px;
+    height: 500px;
+}
+
+#button {
+    width: 1000px;
+    height: 100px;
+}
+
+.dot-red {
+    fill: #e6194b;
+    opacity: 1;
+}
+
+.dot-blue {
+    fill: #0082c8;
+    opacity: 1;
+}
+
+.dot-green{
+    fill: #3cb44b;
+    opacity: 1;
+}
+
+.dot-purple {
+    fill: #911eb4;
+    opacity: 1;
+}
+
+.dot-orange {
+    fill: #f58231;
+    opacity: 1;
+}
+
+.dot-yellow {
+    fill: #ffe119;
+    opacity: 1;
+}
+.dot-magenda {
+    fill: #f032e6;
+    opacity: 1;
+}
+.dot-navy {
+    fill: #000080;
+    opacity: 1;
+}
+.dot-teal {
+    fill: #008080;
+    opacity: 1;
+}
+.dot-cyan {
+    fill: #46f0f0;
+    opacity: 1;
+}
+.dot-lime {
+    fill: #d2f53c;
+    opacity: 1;
+}
+.dot-brown {
+    fill: #aa6e28;
+    opacity: 1;
+}
+.dot-maroon {
+    fill: #800000;
+    opacity: 1;
+}
+.dot-olive {
+    fill: #808000;
+    opacity: 1;
+}
+.dot-pumkin"  {
+    fill: #A93226;
+    opacity: 1;
+}
+.dot-grey{
+    fill: #212F3D;
+    opacity: 1;
+}
+.dot-veraman{
+    fill: #0B5345;
+    opacity: 1;
+}
+.dot-pinkfluo{
+    fill: #FF33FF;
+    opacity: 1;
+}
+.dot-greenfluo{
+    fill: #33FF33;
+    opacity: 1;
+}
+.dot-darkpurple{
+    fill: #330033;
+    opacity: 1;
+}
+.dot-lila{
+    fill: #CC33FF;
+    opacity: 1;
+}
+.dot-mint {
+    fill: #aaffc3;
+    opacity: 1;
+}
+
+.median{
+    fill: none;
+    opacity: 1;
+}
+
+.center{
+	fill: black
+	opacity: 1;
+}
+
+.area {
+    fill: black;
+    clip-path: url(#clip);
+}
+
+.selection {
+    fill: lightGrey
+}
+
+.line {
+    fill: none;
+    stroke: none;
+}
+
+.back-button {
+    color: black;
+    text-decoration: none;
+}
+
+.group-box-list {
+    display: none;
+}
+
+.group-box-list.visible {
+    display: block;
+}
+
+tspan {
+    fill: black;
+    font-weight: bold
+    opacity:20;
+}
+
+label {
+    display: inline-block;
+    min-width: 90px;
+    font-size: 14px;
+}
+
+.button-wrapper {
+    display: block;
+    margin-top: 5px;
+}
+
+.select-all-button {
+    display: inline-block;
+}
